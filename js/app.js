@@ -175,3 +175,4 @@ function showModal() {
 
 cards.addEventListener('click', openCard);
 restart.addEventListener('click', startGame);
+restartButton.addEventListener('click', startGame);
