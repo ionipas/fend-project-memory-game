@@ -154,3 +154,19 @@ h1 {
 .modal.show {
     display: block;
 }
+
+@media screen and (max-width: 425px) {
+  .deck {
+      width: 370px;
+      min-height: 370px;
+      padding: 10px;
+  }
+  .deck .card {
+      height: 80px;
+      width: 80px;
+  }
+  .score-panel {
+      width: 300px;
+      margin-bottom: 20px;
+  }
+}
