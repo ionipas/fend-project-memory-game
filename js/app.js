@@ -1,9 +1,11 @@
 const listOfCards = document.querySelectorAll('.card');
 const cards = document.querySelector('.deck');
 const restart = document.querySelector('.fa-repeat');
+const moves = document.querySelector('.moves');
 
 let checkCardsList = [];
 let openCardsList = [];
+let countMove = 0;
 
 
 // Display the cards on the page
@@ -56,8 +58,10 @@ function checkCards(children) {
     if (firstCard === secondCard) {
       lockCards();
       checkCardsList.splice(0, 2);
+      showScore();
     } else {
       changeColor();
+      showScore();
     }
   }
 }
@@ -95,6 +99,12 @@ function hideCards() {
     parent.classList.remove('show', 'no-match');
   }
   checkCardsList.splice(0, 2);
+}
+
+//count moves
+function showScore() {
+  countMove += 1;
+  moves.innerText = countMove;
 }
 
 cards.addEventListener('click', openCard);
