@@ -66,7 +66,12 @@ function changeColor() {
     let parent = checkCardsList[i].parentElement;
     parent.classList.remove('open');
     parent.classList.add('no-match');
+    delayHide();
   }
+}
+
+function delayHide() {
+  setTimeout(hideCards, 500);
 }
 
 //hide the unmatched cards and remove from temporary list
