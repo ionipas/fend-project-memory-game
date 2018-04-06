@@ -16,6 +16,7 @@ let countMove = 0;
 let totalSeconds = 0;
 let timer;
 
+window.onload = startGame();
 
 // Display the cards on the page
 function startGame() {
