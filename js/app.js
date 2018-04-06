@@ -5,6 +5,8 @@ const moves = document.querySelector('.moves');
 const minutesLabel = document.querySelector('.minutes');
 const secondsLabel = document.querySelector('.seconds');
 const starClass = document.getElementsByClassName('fa-star');
+const emptyStar = document.getElementsByClassName('fa-star-o');
+
 
 let checkCardsList = [];
 let openCardsList = [];
@@ -24,6 +26,20 @@ function startGame() {
   }
   cards.appendChild(docFrag);
   clearInterval(timer);
+  secondsLabel.innerText = '00';
+  minutesLabel.innerText = '00';
+  moves.innerText = '0';
+  resetStar();
+}
+
+//reset the stars
+function resetStar() {
+  if (emptyStar.length > 0) {
+    for (let i = (emptyStar.length - 1); i >= 0; i--) {
+      emptyStar[i].classList.add('fa-star');
+      emptyStar[i].classList.remove('fa-star-o');
+    }
+  }
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
