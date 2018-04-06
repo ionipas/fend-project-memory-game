@@ -31,6 +31,21 @@ function openCard(event) {
 //add the card to a temporary *list* of 'open' cards
 function addToCheckList(children) {
   checkCardsList.push(children);
+  checkCards(children);
+}
+
+//check cards and add to final list of 'open' cards if match
+function checkCards(children) {
+  if (checkCardsList.length === 2) {
+    let firstCard = checkCardsList[0].className;
+    let secondCard = checkCardsList[1].className;
+    if (firstCard === secondCard) {
+      lockCards();
+      checkCardsList.splice(0, 2);
+    } else {
+      changeColor();
+    }
+  }
 }
 
 /* move cards on the final list in they match
