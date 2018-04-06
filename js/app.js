@@ -101,6 +101,7 @@ function lockCards() {
     openCardsList.push(parent);
     if (openCardsList.length == 16) {
       clearInterval(timer);
+      delayShowModal();
     }
   }
 }
@@ -156,6 +157,10 @@ function pad(val) {
   } else {
     return valString;
   }
+}
+
+function delayShowModal() {
+  setTimeout(showModal, 700);
 }
 
 //display the modal and show score
