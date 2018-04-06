@@ -45,4 +45,13 @@ function lockCards() {
   }
 }
 
+//change the class to the cards that don't match
+function changeColor() {
+  for (let i = 0; i < checkCardsList.length; i++) {
+    let parent = checkCardsList[i].parentElement;
+    parent.classList.remove('open');
+    parent.classList.add('no-match');
+  }
+}
+
 cards.addEventListener('click', openCard);
