@@ -6,6 +6,8 @@ const minutesLabel = document.querySelector('.minutes');
 const secondsLabel = document.querySelector('.seconds');
 const starClass = document.getElementsByClassName('fa-star');
 const emptyStar = document.getElementsByClassName('fa-star-o');
+const modal = document.querySelector('.modal');
+const restartButton = document.querySelector('#myBtn');
 
 
 let checkCardsList = [];
@@ -154,6 +156,15 @@ function pad(val) {
   } else {
     return valString;
   }
+}
+
+//display the modal and show score
+function showModal() {
+  modal.classList.add('show');
+  let finalMoves = document.querySelector('.final-moves');
+  let finalStars = document.querySelector('.final-stars');
+  finalMoves.textContent = moves.textContent;
+  finalStars.textContent = starClass.length;
 }
 
 cards.addEventListener('click', openCard);
