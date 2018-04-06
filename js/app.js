@@ -22,6 +22,7 @@ function startGame() {
     docFrag.appendChild(stringCards[i]);
   }
   cards.appendChild(docFrag);
+  clearInterval(timer);
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -79,6 +80,9 @@ function lockCards() {
     parent.classList.remove('open');
     parent.classList.add('match');
     openCardsList.push(parent);
+    if (openCardsList.length == 16) {
+      clearInterval(timer);
+    }
   }
 }
 
@@ -109,6 +113,9 @@ function hideCards() {
 function showScore() {
   countMove += 1;
   moves.innerText = countMove;
+  if (countMove === 1) {
+    timer = setInterval(setTime, 1000);
+  }
 }
 
 //timer
