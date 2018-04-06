@@ -32,6 +32,7 @@ function startGame() {
   minutesLabel.innerText = '00';
   moves.innerText = '0';
   resetStar();
+  modal.classList.remove('show');
 }
 
 //reset the stars
