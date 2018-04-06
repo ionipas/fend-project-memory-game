@@ -69,4 +69,13 @@ function changeColor() {
   }
 }
 
+//hide the unmatched cards and remove from temporary list
+function hideCards() {
+  for (let i = 0; i < checkCardsList.length; i++) {
+    let parent = checkCardsList[i].parentElement;
+    parent.classList.remove('show', 'no-match');
+  }
+  checkCardsList.splice(0, 2);
+}
+
 cards.addEventListener('click', openCard);
