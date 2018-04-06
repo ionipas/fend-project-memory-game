@@ -1,11 +1,7 @@
 const listOfCards = document.querySelectorAll('.card');
 const cards = document.querySelector('.deck');
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+
+let checkCardsList = [];
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -27,9 +23,14 @@ function openCard(event) {
   if (event.target.nodeName.toLowerCase() === 'li') {
     event.target.classList.add('open', 'show');
     let children = event.target.firstElementChild;
+    addToCheckList(children);
   }
 }
 
+//add the card to a temporary *list* of 'open' cards
+function addToCheckList(children) {
+  checkCardsList.push(children);
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
