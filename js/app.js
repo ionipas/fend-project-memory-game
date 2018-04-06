@@ -2,10 +2,14 @@ const listOfCards = document.querySelectorAll('.card');
 const cards = document.querySelector('.deck');
 const restart = document.querySelector('.fa-repeat');
 const moves = document.querySelector('.moves');
+const minutesLabel = document.querySelector('.minutes');
+const secondsLabel = document.querySelector('.seconds');
 
 let checkCardsList = [];
 let openCardsList = [];
 let countMove = 0;
+let totalSeconds = ;
+let timer;
 
 
 // Display the cards on the page
@@ -105,6 +109,22 @@ function hideCards() {
 function showScore() {
   countMove += 1;
   moves.innerText = countMove;
+}
+
+//timer
+function setTime() {
+  totalSeconds++;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  let valString = val + '';
+  if (valString.length < 2) {
+    return '0' + valString;
+  } else {
+    return valString;
+  }
 }
 
 cards.addEventListener('click', openCard);
