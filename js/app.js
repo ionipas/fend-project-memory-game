@@ -1,5 +1,6 @@
 const listOfCards = document.querySelectorAll('.card');
 const cards = document.querySelector('.deck');
+const restart = document.querySelector('.fa-repeat');
 
 let checkCardsList = [];
 let openCardsList = [];
@@ -97,3 +98,4 @@ function hideCards() {
 }
 
 cards.addEventListener('click', openCard);
+restart.addEventListener('click', startGame);
