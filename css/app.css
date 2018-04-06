@@ -113,3 +113,40 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+/*
+ * Styles for the modal
+ */
+
+.modal {
+    display: none;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    top: 35%;
+}
+
+#myBtn {
+    background-color: #008cba;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 32px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.modal.show {
+    display: block;
+}
