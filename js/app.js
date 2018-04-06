@@ -4,11 +4,12 @@ const restart = document.querySelector('.fa-repeat');
 const moves = document.querySelector('.moves');
 const minutesLabel = document.querySelector('.minutes');
 const secondsLabel = document.querySelector('.seconds');
+const starClass = document.getElementsByClassName('fa-star');
 
 let checkCardsList = [];
 let openCardsList = [];
 let countMove = 0;
-let totalSeconds = ;
+let totalSeconds = 0;
 let timer;
 
 
@@ -115,6 +116,11 @@ function showScore() {
   moves.innerText = countMove;
   if (countMove === 1) {
     timer = setInterval(setTime, 1000);
+  }
+  if (countMove === 20 || countMove === 30) {
+    let changeStarClass = starClass[(starClass.length - 1)].classList;
+    changeStarClass.add('fa-star-o');
+    changeStarClass.remove('fa-star');
   }
 }
 
