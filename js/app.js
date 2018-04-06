@@ -18,7 +18,7 @@ let timer;
 
 window.onload = startGame();
 
-// Display the cards on the page
+// Display the cards on the page and reset the score table
 function startGame() {
   let stringCards = Array.prototype.slice.call(listOfCards);
   shuffle(stringCards);
@@ -57,7 +57,6 @@ function shuffle(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-
     return array;
 }
 
@@ -94,6 +93,7 @@ function checkCards(children) {
 
 /* move cards on the final list in they match
  * lock them in the open position
+ * if all the cards are open, stop the timer
  */
 function lockCards() {
   for (let i = 0; i < checkCardsList.length; i++) {
@@ -131,7 +131,7 @@ function hideCards() {
   checkCardsList.splice(0, 2);
 }
 
-//count moves
+//count moves, activate timer and set limit for the stars
 function showScore() {
   countMove += 1;
   moves.innerText = countMove;
