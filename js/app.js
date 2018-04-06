@@ -4,6 +4,19 @@ const cards = document.querySelector('.deck');
 let checkCardsList = [];
 let openCardsList = [];
 
+
+// Display the cards on the page
+function startGame() {
+  let stringCards = Array.prototype.slice.call(listOfCards);
+  shuffle(stringCards);
+  let docFrag = document.createDocumentFragment();
+  for (let i = 0; i < stringCards.length; i++) {
+    stringCards[i].classList.remove('match', 'show', 'open');
+    docFrag.appendChild(stringCards[i]);
+  }
+  cards.appendChild(docFrag);
+}
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
