@@ -28,6 +28,10 @@ function startGame() {
     docFrag.appendChild(stringCards[i]);
   }
   cards.appendChild(docFrag);
+  checkCardlist = [];
+  openCardsList = [];
+  countMove = 0;
+  totalSeconds = 0;
   clearInterval(timer);
   secondsLabel.innerText = '00';
   minutesLabel.innerText = '00';
@@ -133,7 +137,7 @@ function hideCards() {
 
 //count moves, activate timer and set limit for the stars
 function showScore() {
-  countMove += 1;
+  countMove++;
   moves.innerText = countMove;
   if (countMove === 1) {
     timer = setInterval(setTime, 1000);
