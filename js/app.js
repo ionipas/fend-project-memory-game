@@ -67,9 +67,13 @@ function shuffle(array) {
 // display the card's symbol
 function openCard(event) {
   if (event.target.nodeName.toLowerCase() === 'li') {
-    event.target.classList.add('open', 'show');
-    let children = event.target.firstElementChild;
-    addToCheckList(children);
+    if (event.target.className === 'card show match' || event.target.className === 'card open show') {
+      event.preventDefault();
+    } else {
+      event.target.classList.add('open', 'show');
+      let children = event.target.firstElementChild;
+      addToCheckList(children);
+    }
   }
 }
 
