@@ -178,8 +178,12 @@ function showModal() {
   modal.classList.add('show');
   let finalMoves = document.querySelector('.final-moves');
   let finalStars = document.querySelector('.final-stars');
+  let finalMinutes = document.querySelector('.total-minutes');
+  let finalSeconds = document.querySelector('.total-seconds');
   finalMoves.textContent = moves.textContent;
   finalStars.textContent = starClass.length;
+  finalMinutes.textContent = minutesLabel.textContent;
+  finalSeconds.textContent = secondsLabel.textContent;
 }
 
 cards.addEventListener('click', openCard);
