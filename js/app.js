@@ -13,6 +13,7 @@ const restartButton = document.querySelector('#myBtn');
 let checkCardsList = [];
 let openCardsList = [];
 let countMove = 0;
+let countClicks = 0;
 let totalSeconds = 0;
 let timer;
 
@@ -31,6 +32,7 @@ function startGame() {
   checkCardsList = [];
   openCardsList = [];
   countMove = 0;
+  countClicks = 0;
   totalSeconds = 0;
   clearInterval(timer);
   secondsLabel.innerText = '00';
@@ -75,6 +77,7 @@ function openCard(event) {
       addToCheckList(children);
     }
   }
+  countClicks++;
 }
 
 //add the card to a temporary *list* of 'open' cards
