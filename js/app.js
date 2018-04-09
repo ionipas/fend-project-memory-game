@@ -28,7 +28,7 @@ function startGame() {
     docFrag.appendChild(stringCards[i]);
   }
   cards.appendChild(docFrag);
-  checkCardlist = [];
+  checkCardsList = [];
   openCardsList = [];
   countMove = 0;
   totalSeconds = 0;
