@@ -78,6 +78,7 @@ function openCard(event) {
     }
   }
   countClicks++;
+  startTimer();
 }
 
 //add the card to a temporary *list* of 'open' cards
@@ -146,9 +147,6 @@ function hideCards() {
 function showScore() {
   countMove++;
   moves.innerText = countMove;
-  if (countMove === 1) {
-    timer = setInterval(setTime, 1000);
-  }
   if (countMove === 20 || countMove === 30) {
     let changeStarClass = starClass[(starClass.length - 1)].classList;
     changeStarClass.add('fa-star-o');
@@ -157,6 +155,12 @@ function showScore() {
 }
 
 //timer
+function startTimer() {
+  if (countClicks === 1) {
+    timer = setInterval(setTime, 1000);
+  }
+}
+
 function setTime() {
   totalSeconds++;
   secondsLabel.innerHTML = pad(totalSeconds % 60);
