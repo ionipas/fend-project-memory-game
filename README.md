@@ -37,7 +37,7 @@ The game ends once all cards have been correctly matched.
 - CSS
 - JavaScript
 
-### Dependencies/ Acknowledgements
+### Dependencies
 
 - [Font Awesome Icon](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css)
 - [Coda Web Font](https://fonts.googleapis.com/css?family=Coda)
